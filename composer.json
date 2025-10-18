@@ -1,0 +1,25 @@
+{
+    "name": "ngo-tools/drupal-newsletter-module",
+    "type": "drupal-module",
+    "description": "Let users sign up to newsletters managed with NGO.Tools ",
+    "homepage": "https://github.com/ngo-tools/drupal-newsletter-module",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "NGO.Tools",
+            "email": "kontakt@ngo.tools"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/ngo-tools/drupal-newsletter-module/issues"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "web/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ]
+        }
+    }
+}
