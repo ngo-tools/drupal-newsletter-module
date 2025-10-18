@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Main module file for NGO Tools Newsletter.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ngo_tools_newsletter_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.ngo_tools_newsletter':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The NGO Tools Newsletter module provides integration with the ngo.tools API for newsletter signups.') . '</p>';
+      $output .= '<h3>' . t('Configuration') . '</h3>';
+      $output .= '<p>' . t('Configure the API settings at <a href=":url">Administration > Configuration > System > NGO Tools Newsletter Settings</a>.', [
+        ':url' => '/admin/config/system/ngo-tools-newsletter',
+      ]) . '</p>';
+      $output .= '<h3>' . t('Usage') . '</h3>';
+      $output .= '<p>' . t('Place the "NGO Tools Newsletter Signup" block in any region using the Block Layout page.') . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function ngo_tools_newsletter_theme($existing, $type, $theme, $path) {
+  return [
+    'ngo_tools_newsletter_form' => [
+      'render element' => 'form',
+      'template' => 'ngo-tools-newsletter-form',
+    ],
+  ];
+}

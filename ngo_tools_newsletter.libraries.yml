@@ -1,0 +1,10 @@
+newsletter_form:
+  version: 1.x
+  css:
+    theme:
+      css/newsletter-form.css: {}
+  js:
+    js/newsletter-form.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings

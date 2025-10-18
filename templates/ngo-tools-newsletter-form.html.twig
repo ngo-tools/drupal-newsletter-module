@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the NGO Tools newsletter signup form.
+ *
+ * Available variables:
+ * - form: The newsletter signup form render array.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="ngo-tools-newsletter-wrapper">
+  {{ form.hp }}
+  
+  <div class="ngo-tools-newsletter-field">
+    {{ form.first_name }}
+  </div>
+  
+  <div class="ngo-tools-newsletter-field">
+    {{ form.last_name }}
+  </div>
+  
+  <div class="ngo-tools-newsletter-field">
+    {{ form.email }}
+  </div>
+  
+  <div class="ngo-tools-newsletter-actions">
+    {{ form.actions }}
+  </div>
+  
+  {{ form|without('hp', 'first_name', 'last_name', 'email', 'actions') }}
+</div>

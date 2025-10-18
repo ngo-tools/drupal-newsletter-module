@@ -1,0 +1,13 @@
+ngo_tools_newsletter.settings:
+  type: config_object
+  label: 'NGO Tools Newsletter settings'
+  mapping:
+    api_bearer_token:
+      type: string
+      label: 'Encrypted API Bearer Token'
+    organization_name:
+      type: string
+      label: 'Organization Name'
+    segment_id:
+      type: string
+      label: 'Selected Segment ID'

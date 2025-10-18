@@ -1,0 +1,7 @@
+ngo_tools_newsletter.settings:
+  path: '/admin/config/system/ngo-tools-newsletter'
+  defaults:
+    _form: '\Drupal\ngo_tools_newsletter\Form\SettingsForm'
+    _title: 'NGO Tools Newsletter Settings'
+  requirements:
+    _permission: 'administer site configuration'

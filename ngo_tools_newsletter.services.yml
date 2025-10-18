@@ -1,0 +1,11 @@
+services:
+  ngo_tools_newsletter.encryption:
+    class: Drupal\ngo_tools_newsletter\Service\EncryptionService
+
+  ngo_tools_newsletter.api:
+    class: Drupal\ngo_tools_newsletter\Service\NgoToolsApiService
+    arguments:
+      - '@config.factory'
+      - '@http_client_factory'
+      - '@ngo_tools_newsletter.encryption'
+      - '@logger.factory'

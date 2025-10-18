@@ -1,0 +1,7 @@
+name: 'NGO Tools Newsletter'
+type: module
+description: 'Provides newsletter signup functionality using the ngo.tools API. Includes a block plugin for easy placement in any theme.'
+core_version_requirement: ^10 || ^11
+package: 'Custom'
+dependencies:
+  - drupal:block
