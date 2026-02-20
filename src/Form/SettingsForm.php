@@ -122,10 +122,10 @@ class SettingsForm extends ConfigFormBase {
 
       $form['segment_id'] = [
         '#type' => 'select',
-        '#title' => $this->t('Select Segment'),
+        '#title' => $this->t('Select Newsletter'),
         '#options' => $segment_options,
         '#default_value' => $selected_segment,
-        '#description' => $this->t('Select the newsletter segment for subscriptions.'),
+        '#description' => $this->t('Select the newsletter that user filling out the form should be subscribed to.'),
       ];
     }
 

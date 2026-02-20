@@ -34,7 +34,7 @@ A Drupal 10/11 module that provides newsletter signup functionality using the ng
    ```bash
    drush en ngo_tools_newsletter
    ```
-   
+
    Or navigate to **Administration > Extend** and enable "NGO Tools Newsletter".
 
 3. **Clear the cache**:
@@ -58,9 +58,9 @@ Navigate to **Administration > Configuration > System > NGO Tools Newsletter Set
 - Example: If your URL is `examplename.ngo.tools/app/dashboard`, enter `examplename.ngo.tools`
 - The organization name must end with `.ngo.tools`
 
-#### Select Segment
-- Once you've entered valid credentials, a dropdown will appear with available segments
-- Select the newsletter segment where subscriptions should be added
+#### Select Newsletter
+- Once you've entered valid credentials, a dropdown will appear with available newsletters in your ngo.tools instance
+- Select the newsletter where subscriptions should be added
 - Save the configuration
 
 ### 2. Place the Block
