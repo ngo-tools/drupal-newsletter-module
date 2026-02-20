@@ -129,6 +129,20 @@ class SettingsForm extends ConfigFormBase {
       ];
     }
 
+    $default_confirmation = $this->t('Thank you for signing up. Please check your email and click the confirmation link to complete your subscription.');
+    $form['confirmation_message'] = [
+      '#type' => 'textarea',
+      '#title' => $this->t('Confirmation Message'),
+      '#default_value' => $config->get('confirmation_message') ?: $default_confirmation,
+      '#description' => $this->t('The message shown to users after they submit the form. Use [email] to insert the address they entered (e.g. "We sent a confirmation link to [email].").'),
+      '#required' => TRUE,
+      '#rows' => 4,
+      '#attributes' => [
+        'placeholder' => (string) $default_confirmation,
+      ],
+      '#weight' => 100,
+    ];
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -147,6 +161,7 @@ class SettingsForm extends ConfigFormBase {
 
     // Save other settings.
     $config->set('organization_name', $form_state->getValue('organization_name'));
+    $config->set('confirmation_message', $form_state->getValue('confirmation_message'));
 
     if ($form_state->hasValue('segment_id')) {
       $config->set('segment_id', $form_state->getValue('segment_id'));

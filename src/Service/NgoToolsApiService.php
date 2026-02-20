@@ -99,6 +99,29 @@ class NgoToolsApiService {
   }
 
   /**
+   * Gets the confirmation message from configuration.
+   *
+   * @param array $context
+   *   Optional context for placeholders. Use 'email' to replace [email] in the
+   *   message with the address the user entered.
+   *
+   * @return string
+   *   The confirmation message (translated, with [email] replaced if provided).
+   */
+  protected function getConfirmationMessage(array $context = []): string {
+    $config = $this->configFactory->get('ngo_tools_newsletter.settings');
+    $message = $config->get('confirmation_message');
+    if (!empty($message)) {
+      $message = $this->t($message);
+    }
+    else {
+      $message = $this->t('Thank you for signing up. Please check your email and click the confirmation link to complete your subscription.');
+    }
+    $email = $context['email'] ?? '';
+    return str_replace('[email]', $email, (string) $message);
+  }
+
+  /**
    * Builds the API endpoint URL for contact segments.
    *
    * @return string
@@ -224,7 +247,7 @@ class NgoToolsApiService {
       if (in_array($status_code, [200, 201])) {
         return [
           'success' => TRUE,
-          'message' => $this->t('Thank you for subscribing!'),
+          'message' => $this->getConfirmationMessage(['email' => $data['email'] ?? '']),
         ];
       }
 

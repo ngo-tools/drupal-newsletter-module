@@ -55,7 +55,8 @@ class NewsletterSignupForm extends FormBase {
     // Honeypot field for spam protection.
     $form['hp'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Leave this field empty'),
+      '#title' => $this->t('Bitte dieses Feld leer lassen'),
+      '#title_display' => 'invisible',
       '#attributes' => [
         'style' => 'position:absolute;left:-99999px;top:auto;width:1px;height:1px;overflow:hidden;',
         'tabindex' => '-1',
@@ -65,19 +66,19 @@ class NewsletterSignupForm extends FormBase {
 
     $form['first_name'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('First Name'),
+      '#title' => $this->t('Vorname'),
       '#required' => FALSE,
       '#attributes' => [
-        'placeholder' => $this->t('First Name'),
+        'placeholder' => $this->t('Vorname'),
       ],
     ];
 
     $form['last_name'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('Last Name'),
+      '#title' => $this->t('Nachname'),
       '#required' => FALSE,
       '#attributes' => [
-        'placeholder' => $this->t('Last Name'),
+        'placeholder' => $this->t('Nachname'),
       ],
     ];
 
@@ -120,7 +121,7 @@ class NewsletterSignupForm extends FormBase {
     // Validate email format.
     $email = $form_state->getValue('email');
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $form_state->setErrorByName('email', $this->t('Please enter a valid email address.'));
+      $form_state->setErrorByName('email', $this->t('Bitte geben Sie eine gültige E-Mail-Adresse ein.'));
     }
   }
 

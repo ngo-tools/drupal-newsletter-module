@@ -11,3 +11,6 @@ ngo_tools_newsletter.settings:
     segment_id:
       type: string
       label: 'Selected Segment ID'
+    confirmation_message:
+      type: string
+      label: 'Confirmation Message'
